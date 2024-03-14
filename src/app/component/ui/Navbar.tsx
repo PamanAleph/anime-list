@@ -28,7 +28,7 @@ export default function Navbar() {
               href="#"
               className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:text-blue-400 dark:border-blue-400"
             >
-              Link
+              About Us
             </Link>
           </li>
           <li className="flex">
@@ -37,7 +37,7 @@ export default function Navbar() {
               href="#"
               className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:text-blue-400 dark:border-blue-400"
             >
-              Link
+              Community
             </Link>
           </li>
           <li className="flex">

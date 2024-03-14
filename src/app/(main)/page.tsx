@@ -1,33 +1,29 @@
+import { ALL_ANIME, TOP_ANIME, TOP_CHARACTER } from "../../../config";
 import BlogCard from "../component/main/BlogCard";
+import CharacterCard from "../component/main/CharacterCard";
 
 export default async function Home() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/top/anime`);
-  const anime = await response.json();
-  console.log(anime);
+  const responseTop = await fetch(TOP_ANIME);
+  const topAnime = await responseTop.json();
+  const responseAll = await fetch(ALL_ANIME);
+  const allAnime = await responseAll.json();
+  const responseCharacter = await fetch(TOP_CHARACTER);
+  const topCharacter = await responseCharacter.json();
+
+  console.log(topCharacter)
+
 
   return (
     <div className="max-w-7xl mx-auto">
       <div>
-        <h1>test</h1>
-        <div className="grid grid-cols-3 gap-2">
-          {anime.data.map(
-            (data: {
-              status: string | undefined;
-              images: any;
-              synopsis: string | undefined;
-              title: string;
-            }) => (
-              <BlogCard
-                key={data.title} // Make sure to add a unique key
-                title={data.title}
-                image={data.images.webp.image_url}
-                description={data.synopsis}
-                status={data.status}
-              />
-            )
-          )}
+        <h1 className="font-semibold text-lg py-10">Top Anime</h1>
+        <BlogCard api={topAnime}/>
+        <h1 className="font-semibold text-lg py-10">Top Character</h1>
+        <BlogCard api={allAnime}/>
+        <h1 className="font-semibold text-lg py-10">Top Character</h1>
+        <CharacterCard api={topCharacter}/>
+          
         </div>
       </div>
-    </div>
   );
 }

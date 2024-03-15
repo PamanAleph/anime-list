@@ -10,7 +10,7 @@ export default function BlogCard({ api }: BlogCardProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
       {api.data.map((anime: any) => (
-        <article className="flex bg-white transition hover:shadow-xl" key={anime.title}>
+        <article className="flex bg-[#76ABAE] transition hover:shadow-xl" key={anime.title}>
           <div className="rotate-180 p-2 [writing-mode:_vertical-lr]">
             <p className="text-sm">{anime.status}</p>
           </div>
@@ -41,7 +41,7 @@ export default function BlogCard({ api }: BlogCardProps) {
             <div className="sm:flex sm:items-end sm:justify-end">
               <Link
                 href="#"
-                className="block bg-yellow-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400"
+                className="block bg-[#EEEEEE] px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400"
               >
                 Read Blog
               </Link>

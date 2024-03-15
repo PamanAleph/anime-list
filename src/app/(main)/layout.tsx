@@ -9,7 +9,7 @@ export default async function MainLayout({
    return (
       <div className="flex min-h-screen flex-col scroll-smooth">
          <Navbar/>
-         <div className="flex-1 bg-[#FBFBFB]">{children}</div>
+         <div className="flex-1 bg-[#31363F]">{children}</div>
       </div>
    );
 }

@@ -3,24 +3,22 @@ import BlogCard from "../component/main/BlogCard";
 import CharacterCard from "../component/main/CharacterCard";
 
 export default async function Home() {
-  const responseTop = await fetch(TOP_ANIME);
+  const responseTop = await fetch(`${TOP_ANIME}?limit=3`);
   const topAnime = await responseTop.json();
   const responseAll = await fetch(ALL_ANIME);
   const allAnime = await responseAll.json();
-  const responseCharacter = await fetch(TOP_CHARACTER);
+  const responseCharacter = await fetch(`${TOP_CHARACTER}?limit=4`);
   const topCharacter = await responseCharacter.json();
 
   console.log(topCharacter)
 
 
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto px-4 md:px-0 pt-20">
       <div>
-        <h1 className="font-semibold text-lg py-10">Top Anime</h1>
+        <h1 className="font-semibold text-lg py-10 text-[#76ABAE]">Top Anime</h1>
         <BlogCard api={topAnime}/>
-        <h1 className="font-semibold text-lg py-10">Top Character</h1>
-        <BlogCard api={allAnime}/>
-        <h1 className="font-semibold text-lg py-10">Top Character</h1>
+        <h1 className="font-semibold text-lg py-10 text-[#76ABAE]">Top Character</h1>
         <CharacterCard api={topCharacter}/>
           
         </div>

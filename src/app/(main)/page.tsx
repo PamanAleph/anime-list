@@ -1,6 +1,9 @@
+import Link from "next/link";
 import { ALL_ANIME, TOP_ANIME, TOP_CHARACTER } from "../../../config";
 import BlogCard from "../component/main/BlogCard";
 import CharacterCard from "../component/main/CharacterCard";
+import Header from "../component/main/Header";
+import Hero from "../component/main/Hero";
 
 export default async function Home() {
   const responseTop = await fetch(`${TOP_ANIME}?limit=3`);
@@ -10,18 +13,18 @@ export default async function Home() {
   const responseCharacter = await fetch(`${TOP_CHARACTER}?limit=4`);
   const topCharacter = await responseCharacter.json();
 
-  console.log(topCharacter)
-
-
   return (
-    <div className="max-w-7xl mx-auto px-4 md:px-0 pt-20">
-      <div>
-        <h1 className="font-semibold text-lg py-10 text-[#76ABAE]">Top Anime</h1>
-        <BlogCard api={topAnime}/>
-        <h1 className="font-semibold text-lg py-10 text-[#76ABAE]">Top Character</h1>
-        <CharacterCard api={topCharacter}/>
-          
-        </div>
+    <div>
+      <Hero />
+      <div className="max-w-7xl mx-auto px-4 md:px-0 pt-20">
+        {/* anime  */}
+        <Header title="Top Anime" />
+        <BlogCard api={topAnime} />
+
+        {/* character  */}
+        <Header title="Top Character" />
+        <CharacterCard api={topCharacter} />
       </div>
+    </div>
   );
 }

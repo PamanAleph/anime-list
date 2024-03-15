@@ -10,7 +10,10 @@ export default function CharacterCard({ api }: CharacterCardProps) {
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pb-10">
       {api.data.map((character: any, index: number) => (
-        <div key={character.mal_id} className="relative overflow-hidden rounded-lg shadow transition hover:shadow-2xl">
+        <div
+          key={character.mal_id}
+          className="relative overflow-hidden rounded-lg shadow transition hover:shadow-2xl"
+        >
           <Image
             alt={`${character.name}'s avatar`}
             src={character.images.webp.image_url}

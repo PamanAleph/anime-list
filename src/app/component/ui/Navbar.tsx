@@ -45,7 +45,7 @@ export default function Navbar() {
               href="#"
               className="flex items-center px-4 -mb-1 border-b-2 border-transparent text-blue-400 border-blue-400"
             >
-              Link
+              Forum
             </Link>
           </li>
           <li className="flex">
@@ -60,7 +60,7 @@ export default function Navbar() {
         </ul>
         <Link
           rel="noopener noreferrer"
-          href="#"
+          href="/"
           aria-label="Back to homepage"
           className="flex items-center p-2"
         >

@@ -4,7 +4,7 @@ import BlogCard from "@/app/component/main/BlogCard";
 
 export default async function page({ params }: any) {
 
-  const decodedKeywords = decodeURIComponent(params.keyword)
+  const decodedKeywords = decodeURIComponent(params.keyword).replace(/%20/g, ' ')
   const responseAll = await fetch(`${ALL_ANIME}?q=${decodedKeywords}`);
   const AllAnime = await responseAll.json();
 
